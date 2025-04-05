@@ -100,7 +100,7 @@ const ChatBot: React.FC = () => {
   useEffect(() => {
     const initialMessage: Message = {
       sender: "bot",
-      text: "Halo! 👋 Saya adalah Asisten Virtual yang siap membantu belajar tentang Sistem Komputer pada mata pelajaran Informatika tingkat SMP khsusnya kelas 10. Apa yang bisa saya bantu?",
+      text: "Halo! 👋 Saya adalah Asisten Virtual yang siap membantu belajar tentang Sistem Komputer pada mata pelajaran Informatika tingkat SMP khususnya kelas 10. Apa yang bisa saya bantu?",
       time: getCurrentTime(),
     };
 
@@ -187,9 +187,9 @@ const ChatBot: React.FC = () => {
           className="p-4 space-y-2 bg-gray-200 rounded-lg shadow-lg absolute bottom-24 left-1/2 transform -translate-x-1/2 w-[80%]"
         >
           {[
-            "Apa itu komputer?",
-            "Apa itu jaringan?",
-            "Apa itu bilangan Binner?",
+            "Apa itu Sistem Operasi?",
+            "Apa itu Jaringan?",
+            "Apa itu Bilangan Binner?",
             "Apa itu Software?",
             "Apa itu Hardware?",
           ].map((option, index) => (
