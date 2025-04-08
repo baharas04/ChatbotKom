@@ -1,11 +1,11 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance } from "axios";
 
 // Konfigurasi default untuk axios
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: 'https://chat-bot-servers.vercel.app/api/',
+  baseURL: "https://backend-ivory-three-69.vercel.app",
   headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
+    "Content-Type": "application/json",
+    Accept: "application/json",
   },
 });
 
