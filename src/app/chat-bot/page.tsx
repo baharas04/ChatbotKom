@@ -7,6 +7,9 @@ import { IoArrowBack } from "react-icons/io5";
 import { FaQuestionCircle } from "react-icons/fa";
 import { MdOutlineDashboard } from "react-icons/md";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+
 
 type Message = {
   sender: "user" | "bot";
@@ -101,7 +104,7 @@ const ChatBot: React.FC = () => {
   useEffect(() => {
     const initialMessage: Message = {
       sender: "bot",
-      text: "Halo! 👋 Saya adalah Asisten Virtual yang siap membantu belajar tentang Sistem Komputer pada mata pelajaran Informatika tingkat SMP khususnya kelas 10. Apa yang bisa saya bantu?",
+      text: "Halo! 👋 Saya adalah Asisten Virtual yang siap membantu belajar tentang Sistem Komputer pada mata pelajaran Informatika tingkat SMK khususnya kelas X. Apa yang bisa saya bantu?",
       time: getCurrentTime(),
     };
 
@@ -132,27 +135,55 @@ const ChatBot: React.FC = () => {
                   msg.sender === "user" ? "order-last" : ""
                 }`}
               >
-                <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
-                  <Image
-                    src="/images/bot.png"
-                    alt="Avatar"
-                    width={32}
-                    height={32}
-                    className="w-full h-full rounded-full"
-                  />
-                </div>
+                {msg.sender === "user" ? (
+                  <div className="w-8 h-8 rounded-full bg-gray-300 ml-2 flex items-center justify-center">
+                    <Image
+                      src="/images/bot.png"
+                      alt="User Avatar"
+                      width={32}
+                      height={32}
+                      className="w-full h-full rounded-full"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                    <Image
+                      src="/images/bot.png"
+                      alt="Bot Avatar"
+                      width={32}
+                      height={32}
+                      className="w-full h-full rounded-full"
+                    />
+                  </div>
+                )}
               </div>
 
-              <div
-                className={`p-2 rounded-lg max-w-3xl ${
-                  msg.sender === "bot"
-                    ? "bg-gray-300 text-black"
-                    : "bg-blue-500 text-white"
-                }`}
-              >
-                <div className="prose max-w-full text-sm">
-                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+              <div>
+                <div
+                  className={`p-2 rounded-lg w-auto ${
+                    msg.sender === "bot"
+                      ? "bg-gray-300"
+                      : "bg-blue-500 text-white"
+                  }`}
+                >
+                  <div
+                    className={`p-2 rounded-lg max-w-3xl ${
+                      msg.sender === "bot"
+                        ? "bg-gray-300 text-black"
+                        : "bg-blue-500 text-white"
+                    }`}
+                  >
+                    <div className="prose max-w-full text-sm">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypeRaw]}
+                      >
+                        {msg.text}
+                      </ReactMarkdown>
+                    </div>
+                  </div>
                 </div>
+                <div className="text-xs text-gray-500 mt-1">{msg.time}</div>
               </div>
             </div>
           </div>
