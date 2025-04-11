@@ -6,6 +6,7 @@ import Image from "next/image";
 import { IoArrowBack } from "react-icons/io5";
 import { FaQuestionCircle } from "react-icons/fa";
 import { MdOutlineDashboard } from "react-icons/md";
+import ReactMarkdown from "react-markdown";
 
 type Message = {
   sender: "user" | "bot";
@@ -131,40 +132,27 @@ const ChatBot: React.FC = () => {
                   msg.sender === "user" ? "order-last" : ""
                 }`}
               >
-                {msg.sender === "user" ? (
-                  <div className="w-8 h-8 rounded-full bg-gray-300 ml-2 flex items-center justify-center">
-                    <Image
-                      src="/images/bot.png"
-                      alt="User Avatar"
-                      width={32}
-                      height={32}
-                      className="w-full h-full rounded-full"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
-                    <Image
-                      src="/images/bot.png"
-                      alt="Bot Avatar"
-                      width={32}
-                      height={32}
-                      className="w-full h-full rounded-full"
-                    />
-                  </div>
-                )}
+                <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                  <Image
+                    src="/images/bot.png"
+                    alt="Avatar"
+                    width={32}
+                    height={32}
+                    className="w-full h-full rounded-full"
+                  />
+                </div>
               </div>
 
-              <div>
-                <div
-                  className={`p-2 rounded-lg w-auto ${
-                    msg.sender === "bot"
-                      ? "bg-gray-300"
-                      : "bg-blue-500 text-white"
-                  }`}
-                >
-                  {msg.text}
+              <div
+                className={`p-2 rounded-lg max-w-3xl ${
+                  msg.sender === "bot"
+                    ? "bg-gray-300 text-black"
+                    : "bg-blue-500 text-white"
+                }`}
+              >
+                <div className="prose max-w-full text-sm">
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
                 </div>
-                <div className="text-xs text-gray-500 mt-1">{msg.time}</div>
               </div>
             </div>
           </div>
@@ -188,7 +176,7 @@ const ChatBot: React.FC = () => {
         >
           {[
             "Apa itu Sistem Operasi?",
-            "Apa itu Jaringan?",
+            "Apa itu Sistem Bilangan?",
             "Apa itu Bilangan Binner?",
             "Apa itu Software?",
             "Apa itu Hardware?",
