@@ -10,7 +10,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 
-
 type Message = {
   sender: "user" | "bot";
   text: string;
@@ -173,7 +172,7 @@ const ChatBot: React.FC = () => {
                         : "bg-blue-500 text-white"
                     }`}
                   >
-                    <div className="prose max-w-full text-sm">
+                    <div className="prose max-w-full text-sm text-black">
                       <ReactMarkdown
                         remarkPlugins={[remarkGfm]}
                         rehypePlugins={[rehypeRaw]}
@@ -231,7 +230,7 @@ const ChatBot: React.FC = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a message"
-          className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <button

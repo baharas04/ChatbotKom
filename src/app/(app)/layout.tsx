@@ -1,7 +1,7 @@
 // components/layout.tsx
 
-import Navbar from '@/components/navigasi/navigasi';
-import { ReactNode } from 'react';
+import Navbar from "@/components/navigasi/navigasi";
+import { ReactNode } from "react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,12 +10,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar/>
+      <Navbar />
       <main className="flex-grow mt-16">{children}</main>
       <footer className="text-light text-center">
-      <p>&copy; 2024 Sy.COM | Pendidikan Teknik Informatika | UMS</p>
-    </footer>
-   
+        <p>&copy; 2024 BotKom | Pendidikan Teknik Informatika | UMS</p>
+      </footer>
     </div>
   );
 };
