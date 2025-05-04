@@ -206,8 +206,8 @@ const ChatBot: React.FC = () => {
         >
           {[
             "Apa itu Sistem Operasi?",
-            "Apa itu Sistem Bilangan?",
-            "Apa itu Bilangan Binner?",
+            "Apa itu Optical Drive?",
+            "Apa saja komponen utama pada CPU?",
             "Apa itu Software?",
             "Apa itu Hardware?",
           ].map((option, index) => (
