@@ -43,7 +43,7 @@ const DashboardMateri = () => {
       setMateri(response.data);
     } catch (err) {
       setError(handleError(err));
-      console.error("Error fetching materi:", err);
+      console.error("Error fetching materi:", JSON.stringify(err, null, 2));
     } finally {
       setLoading(false);
     }
