@@ -19,6 +19,7 @@ interface Materi {
   deskripsi: string;
   category: string;
   link: string | null;
+  sumber?: string | null;
 }
 
 const getIconByCategory = (category: string) => {
@@ -119,6 +120,14 @@ const MateriDetailPage = () => {
             />
           </div>
         )}
+         {/* Sumber ditampilkan setelah PDF */}
+  {materi.sumber && (
+    <p className="text-sm text-gray-500 italic mt-2">
+      Sumber: {materi.sumber}
+
+
+    </p>
+  )}
       </Card>
     </main>
   );
