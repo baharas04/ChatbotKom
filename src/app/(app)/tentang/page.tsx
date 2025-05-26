@@ -76,45 +76,44 @@ const AboutChatbotPage = () => {
       </Card>
 
       {/* Section Tentang Pengembang */}
-      <Card className="p-6 shadow-lg max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-blue-600">
-          Pengembang
-        </h2>
+{/* Section Tentang Pengembang */}
+<Card className="p-6 shadow-lg max-w-3xl mx-auto bg-white rounded-lg">
+  <h2 className="text-2xl font-semibold text-center mb-6 text-indigo-600">
+    Pengembang
+  </h2>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-          <img
-            src="/images/logo-ums.png" // Ganti dengan foto pengembang asli jika ada
-            alt="Foto Pengembang"
-            className="w-32 h-32 rounded-full object-cover"
-          />
+  <div className="flex flex-col items-center text-center space-y-4 md:max-w-xl md:mx-auto">
+    {/* Logo di atas nama */}
+    <div className="flex items-center justify-center bg-indigo-100 text-indigo-700 rounded-full w-20 h-20 text-3xl font-bold shadow-md mb-3">
+      BA
+    </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-1">Bahar Apriyana Setyanurani</h3>
-            <p className="italic text-gray-600 mb-3">Fullstack Developer & AI Enthusiast</p>
-            <p className="text-gray-700 mb-4">
-              Email:{" "}
-              <a
-                href="mailto:asbahar986@gmail.com"
-                className="text-blue-600 underline"
-              >
-                asbahar986@gmail.com
-              </a>
-              <br />
-              Website:{" "}
-              <a
-                href="https://www.botkom.my.id"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                www.botkom.my.id
-              </a>
-            </p>
+    <h3 className="text-xl font-semibold mb-1">Bahar Apriyana Setyanurani</h3>
+    <p className="italic text-gray-600 mb-3">Fullstack Developer & AI Enthusiast</p>
+    <p className="text-gray-700 leading-relaxed">
+      Email:{" "}
+      <a
+        href="mailto:asbahar986@gmail.com"
+        className="text-indigo-600 underline hover:text-indigo-800"
+      >
+        asbahar986@gmail.com
+      </a>
+      <br />
+      Website:{" "}
+      <a
+        href="https://www.botkom.my.id"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-indigo-600 underline hover:text-indigo-800"
+      >
+        www.botkom.my.id
+      </a>
+    </p>
+  </div>
+</Card>
 
-            
-          </div>
-        </div>
-      </Card>
+
+
     </main>
   );
 };
