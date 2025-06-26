@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from "axios";
 
 // Konfigurasi default untuk axios
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://backend-production-720f.up.railway.app/api/",
+  baseURL: "https://backend-2vx3.onrender.com/api/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
